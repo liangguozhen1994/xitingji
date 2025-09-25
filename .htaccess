@@ -1,0 +1,25 @@
+# Apache服务器配置 - 三丰云虚拟主机
+RewriteEngine On
+
+# 设置默认首页
+DirectoryIndex index.html
+
+# 允许访问图片文件
+<FilesMatch "\.(jpg|jpeg|png|gif|css|js|ico)$">
+    Header set Cache-Control "max-age=86400"
+</FilesMatch>
+
+# 防止访问隐藏文件
+<Files "\.(env|htaccess|htpasswd|ini|log|sh|sql)$">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# 错误页面重定向
+ErrorDocument 404 /index.html
+ErrorDocument 500 /index.html
+
+# 启用Gzip压缩
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/xml+rss
+</IfModule>

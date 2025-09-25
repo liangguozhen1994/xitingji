@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片上传演示</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .demo { background: #f5f5f5; padding: 20px; margin: 10px 0; border-radius: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <h1>图片上传配置演示</h1>
+    
+    <div class="demo">
+        <h2>1. 轮播图配置示例</h2>
+        <p>在 <code>image-config.js</code> 中配置：</p>
+        <pre><code>
+carousel: [
+    {
+        src: "images/carousel/slide1.jpg",
+        title: "自然风光",
+        description: "捕捉大自然的美丽瞬间"
+    },
+    {
+        src: "images/carousel/slide2.jpg",
+        title: "城市建筑", 
+        description: "记录城市的独特魅力"
+    }
+]
+        </code></pre>
+    </div>
+
+    <div class="demo">
+        <h2>2. 图集配置示例</h2>
+        <p>在 <code>image-config.js</code> 中配置：</p>
+        <pre><code>
+nature: {
+    title: "自然风光",
+    cover: "images/nature/cover.jpg",
+    images: [
+        "images/nature/1.jpg",
+        "images/nature/2.jpg",
+        "images/nature/3.jpg"
+    ]
+}
+        </code></pre>
+    </div>
+
+    <div class="demo">
+        <h2>3. 文件目录结构</h2>
+        <pre><code>
+images/
+├── carousel/
+│   ├── slide1.jpg
+│   ├── slide2.jpg
+│   └── slide3.jpg
+├── nature/
+│   ├── cover.jpg
+│   ├── 1.jpg
+│   ├── 2.jpg
+│   └── 3.jpg
+└── city/
+    ├── cover.jpg
+    ├── 1.jpg
+    └── 2.jpg
+        </code></pre>
+    </div>
+
+    <div class="demo">
+        <h2>4. 图片规格建议</h2>
+        <ul>
+            <li><strong>轮播图</strong>: 1200×600 像素，JPG格式</li>
+            <li><strong>封面图</strong>: 400×300 像素，JPG格式</li>
+            <li><strong>内容图</strong>: 800×600 像素，JPG格式</li>
+            <li><strong>文件大小</strong>: 单张不超过500KB</li>
+        </ul>
+    </div>
+</body>
+</html>
