@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>溪亭记 - 摄影作品展示</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>溪亭记</h1>
+                <span>摄影作品展示</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">首页</a></li>
+                <li><a href="#gallery" class="nav-link">作品集</a></li>
+                <li><a href="#upload" class="nav-link">上传作品</a></li>
+                <li><a href="#about" class="nav-link">关于我们</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 首页轮播 -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h2>用镜头记录美好瞬间</h2>
+                    <p>专业摄影作品展示平台</p>
+                    <button class="cta-button" onclick="showSection('gallery')">浏览作品</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 作品集展示 -->
+        <section id="gallery" class="section">
+            <div class="container">
+                <h2 class="section-title">作品集</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">全部</button>
+                    <button class="filter-btn" data-filter="nature">自然风光</button>
+                    <button class="filter-btn" data-filter="portrait">人像摄影</button>
+                    <button class="filter-btn" data-filter="street">街头摄影</button>
+                    <button class="filter-btn" data-filter="city">城市建筑</button>
+                </div>
+                <div class="gallery-grid" id="galleryGrid">
+                    <!-- 图片将通过JavaScript动态加载 -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 图片上传 -->
+        <section id="upload" class="section">
+            <div class="container">
+                <h2 class="section-title">上传作品</h2>
+                <div class="upload-area">
+                    <div class="upload-box" id="uploadBox">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h3>拖放图片到这里</h3>
+                        <p>或点击选择文件</p>
+                        <input type="file" id="fileInput" accept="image/*" multiple style="display: none;">
+                        <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                            选择图片
+                        </button>
+                    </div>
+                    <div class="upload-progress" id="uploadProgress" style="display: none;">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <p>上传中...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 关于我们 -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">关于我们</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>溪亭记摄影工作室</h3>
+                        <p>专注于高质量摄影作品创作与展示，用镜头捕捉生活中的美好瞬间。</p>
+                        <div class="contact-info">
+                            <p><i class="fas fa-phone"></i> 手机：18038952112</p>
+                            <p><i class="fas fa-envelope"></i> 邮箱：297220226@qq.com</p>
+                            <p><i class="fas fa-map-marker-alt"></i> 地址：摄影艺术空间</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 图片预览模态框 -->
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="">
+            <div class="image-info">
+                <h3 id="imageTitle"></h3>
+                <p id="imageDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 溪亭记摄影工作室. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
